@@ -1,7 +1,9 @@
 #Teameeting iOS 客户端<br>
 ##编译环境<br>
-Xcode 6＋<br>
-
+Xcode 6＋
+  项目中的账号为测试账号，进会时长限制为三分钟，如需要进行商业化，需要去[AnyRTC平台](https://www.anyrtc.io)注册开发者。并进行服务对接。
+  如有疑问，请联系 邮箱：dync_dev@dync.cc
+ 
 ##运行项目<br>
 安装CocoaPods (关于CocoaPods的安装和使用，可参考[这个教程](http://code4app.com/article/cocoapods-install-usage))<br>
 在终端下打开项目所在的目录，执行pod install (若是首次使用CocoaPods，需先执行pod setup)<br>
@@ -24,6 +26,12 @@ MJRefresh： 刷新控件<br>
 mp3lame-for-ios： 录音<br>
 SSKeychain： 账号密码的存取<br>
 TTTAttributedLabel： 支持富文本显示的label<br>
+
+##联系方式<br>
+邮箱:dync_dev@dync.cc<br>
+电话:021-65650071
+##公司简介<br>
+铂渊信息技术（上海）有限公司。一个专注移动端的高清实时通话云服务解决方案。AnyRTC云适用于有音视频通话需求的所有领域。
 
 ##开源协议<br>
 Teameeting iOS app is under the Apache license. See the LICENSE file for more details.
