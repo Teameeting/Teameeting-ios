@@ -17,7 +17,7 @@
 
 #define bottonSpace 10
 #define VideoWidth 100
-@interface ReceiveCallViewController ()<AnyRTCMeetDelegate,UIGestureRecognizerDelegate,tmMessageReceive>
+@interface ReceiveCallViewController ()<AnyRTCMeetDelegate,UIGestureRecognizerDelegate,tmMessageReceive,UIAlertViewDelegate>
 {
     VideoShowItem *_localVideoItem;
     
@@ -575,7 +575,11 @@
 #pragma mark -  UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (self.DisMissPar) {
+            self.DisMissPar();
+        }
+    });
 }
 
 #pragma mark - AnyrtcM2MDelegate
@@ -606,12 +610,11 @@
 {
      NSLog(@"OnRtcLeaveMeet:%d",code);
     if (code == AnyRTC_FORCE_EXIT)
-        [ASHUD showHUDWithCompleteStyleInView:self.view content:@"强制退出" icon:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self dismissViewControllerAnimated:YES completion:nil];
-    });
-
-   
+    {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请去AnyRTC官网申请账号,如有疑问请联系客服!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alertView show];
+        
+    }
 }
 
 - (void) OnRtcVideoView:(UIView*)videoView didChangeVideoSize:(CGSize)size {

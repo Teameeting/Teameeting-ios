@@ -14,6 +14,9 @@
 
 @property (nonatomic, strong) RoomItem *roomItem;
 @property (nonatomic, assign) VideoViewController *videoController;
+
+@property (nonatomic, copy) void (^DisMissPar)();
+
 - (void)videoEnable:(BOOL)enable;
 - (void)audioEnable:(BOOL)enable;
 

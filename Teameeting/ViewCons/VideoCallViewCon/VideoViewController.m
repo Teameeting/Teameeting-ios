@@ -140,6 +140,11 @@
 
     
     self.callViewCon = [[ReceiveCallViewController alloc] init];
+    __weak VideoViewController *weakSelf = self;
+    [self.callViewCon setDisMissPar:^{
+         [weakSelf dismiss];
+    }];
+    
     self.callViewCon.roomItem = self.roomItem;
     self.callViewCon.videoController = self;
     self.menuView = [[LockerView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 60, 300, 60)];
@@ -796,19 +801,22 @@
 }
 
 #pragma mark - LockerDelegate
+- (void)dismiss
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (self.callViewCon) {
+            [self.callViewCon hangeUp];
+            [[TMMessageManage sharedManager] removeMessageListener:self.rootView];
+        }
+        if (self.DismissVideoViewController) {
+            self.DismissVideoViewController();
+        }
+    }];
+}
 - (void)menuClick:(LockerButton *)item
 {
     if (item.tag == 10) {
-        
-        [self dismissViewControllerAnimated:YES completion:^{
-            if (self.callViewCon) {
-                [self.callViewCon hangeUp];
-                [[TMMessageManage sharedManager] removeMessageListener:self.rootView];
-            }
-            if (self.DismissVideoViewController) {
-                self.DismissVideoViewController();
-            }
-        }];
+        [self dismiss];
         
     } else if (item.tag == 20) {
         
