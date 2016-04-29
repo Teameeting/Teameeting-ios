@@ -2,7 +2,7 @@
 ##编译环境<br>
 Xcode 6＋
   项目中的账号为测试账号，进会时长限制为三分钟，如需要进行商业化，需要去[AnyRTC平台](https://www.anyrtc.io)注册开发者。并进行服务对接。
-  如有疑问，请联系 邮箱：zhangjianqiang@dync.cc
+  如有疑问，请联系 邮箱：dync_dev@dync.cc
  
 ##运行项目<br>
 安装CocoaPods (关于CocoaPods的安装和使用，可参考[这个教程](http://code4app.com/article/cocoapods-install-usage))<br>
