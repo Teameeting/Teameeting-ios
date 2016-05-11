@@ -1957,7 +1957,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.teameeting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1dd24c43-3eab-40a3-9036-3b8eaf18f4ec";
+				PROVISIONING_PROFILE = "99ba1e5c-3852-4a05-ab55-22393bf6a326";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;

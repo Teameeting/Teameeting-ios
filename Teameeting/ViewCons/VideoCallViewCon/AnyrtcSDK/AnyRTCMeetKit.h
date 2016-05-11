@@ -10,7 +10,7 @@
 #import "AnyRTC.h"
 
 @protocol AnyRTCMeetDelegate <NSObject>
-
+@optional
 /**
  *  Enter metting secuess
  *

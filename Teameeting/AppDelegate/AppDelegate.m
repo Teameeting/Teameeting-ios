@@ -32,7 +32,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [AnyRTC InitAnyRTCWithKey:@"teameetingtest" withToken:@"c4cd1ab6c34ada58e622e75e41b46d6d" withAppKey:@"OPJXF3xnMqW+7MMTA4tRsZd6L41gnvrPcI25h9JCA4M" withAppId:@"meetingtest"];
+    [AnyRTC InitAnyRTC:@"teameetingtest" withToken:@"c4cd1ab6c34ada58e622e75e41b46d6d" withAppKey:@"OPJXF3xnMqW+7MMTA4tRsZd6L41gnvrPcI25h9JCA4M" withAppId:@"meetingtest"];
     
     //[application setApplicationIconBadgeNumber:0];
     [ToolUtils shead].hasActivity = YES;

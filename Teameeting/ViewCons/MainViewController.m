@@ -640,6 +640,8 @@ static NSString *kRoomCellID = @"RoomCell";
 #pragma mark - button events
 - (void)getRoomButtonEvent:(UIButton*)button
 {
+//    NSIndexPath *path = [[NSIndexPath alloc] initWithIndex:0];
+//    [self.roomList scrollToRowAtIndexPath:path atScrollPosition:UITableViewScrollPositionTop animated:YES];
     self.inputButton.hidden = YES;
     if (self.roomList.isEditing) {
         self.roomList.editing = NO;

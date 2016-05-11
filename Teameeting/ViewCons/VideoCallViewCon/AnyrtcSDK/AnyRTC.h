@@ -32,29 +32,36 @@ typedef NS_ENUM(NSInteger,AnyRTCErrorCode){
 *  @param appId       the user's app Name on the platform
 */
 
-+ (void)InitAnyRTCWithKey:(NSString*)developerID
-                withToken:(NSString*)token
-               withAppKey:(NSString*)appKey
-                withAppId:(NSString*)appId;
++ (void)InitAnyRTC:(NSString*)developerID
+         withToken:(NSString*)token
+        withAppKey:(NSString*)appKey
+         withAppId:(NSString*)appId;
+
+/**
+ *  Config private server
+ *
+ *  @param ip ip address
+ */
++ (void)ConfigServer:(NSString*)ip;
 
 /**
  *  Update token (when login authentication,get from server by youself)
  *
  *  @param token token ,validation of the request video or audio
  */
-+ (void)updateToken:(NSString*)token;
++ (void)UpdateToken:(NSString*)token;
 
 /**
  *  Get the version of AnyRTC SDK.
  *
  *  @return  sdk version
  */
-+ (NSString*)getAnyRTCSdkVersion;
++ (NSString*)GetAnyRTCSdkVersion;
 
 /**
  *  Open log Default is NO
  */
-+ (void)setLogON;
++ (void)SetLogON;
 
 @end
 

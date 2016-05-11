@@ -11,7 +11,7 @@
 #import "TMMsgSender.h"
 
 @protocol tmMessageReceive <NSObject>
-
+@optional
 //for Chat
 - (void)messageDidReceiveWithContent:(NSString *)content messageTime:(NSString *)time withNickName:(NSString*)nickName withRoomId:(NSString*)roomID;
 
