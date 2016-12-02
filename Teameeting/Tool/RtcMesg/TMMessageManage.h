@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "TMMsgSender.h"
+//#import "TMMsgSender.h"
+#import <MsgClient/TMMsgSender.h>
 
 @protocol tmMessageReceive <NSObject>
 @optional

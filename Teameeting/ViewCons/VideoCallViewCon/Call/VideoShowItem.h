@@ -7,15 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AnyRTCMeetKit.h"
 
-@interface VideoShowItem : AnyRTCVideoItem
+@interface VideoShowItem : NSObject
 
-//@property (nonatomic,strong) UIView *showVideoView;
-
-//@property (nonatomic, strong) NSString *publishID;
-
-//@property (nonatomic,assign) CGSize videoSize; // reality video Size
+@property (nonatomic, strong) UIView *videoView;   // local or remote view
+@property (nonatomic, strong) NSString *channelID; // the user channel ID of view
+@property (nonatomic) BOOL isBack;                 // the direction of local camera (default is NO) ,if the video is remote ,the parameter is failure (Recommended not to set up)
+@property (nonatomic, assign) CGSize videoSize;            // record the video size
 
 
 - (void)setVideoHidden:(BOOL)isVideoHidden;

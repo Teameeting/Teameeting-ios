@@ -12,7 +12,6 @@
 		780455C31C51E736003ADDCC /* no_video_show@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780455C11C51E736003ADDCC /* no_video_show@3x.png */; };
 		780455C61C51FB11003ADDCC /* sharebackgroud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780455C41C51FB11003ADDCC /* sharebackgroud@2x.png */; };
 		780455C71C51FB11003ADDCC /* sharebackgroud@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780455C51C51FB11003ADDCC /* sharebackgroud@3x.png */; };
-		7809A9DD1C805E9D00B7C0F6 /* libanrtcsdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7809A9DC1C805E9D00B7C0F6 /* libanrtcsdk.a */; };
 		7810288E1C48DA2200CD9FA6 /* ASBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7810288D1C48DA2200CD9FA6 /* ASBadgeView.m */; };
 		7810F7F01C5A073C00B77955 /* nick_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810F7EE1C5A073C00B77955 /* nick_close@2x.png */; };
 		7810F7F11C5A073C00B77955 /* nick_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810F7EF1C5A073C00B77955 /* nick_close@3x.png */; };
@@ -24,11 +23,9 @@
 		781F6E171C44CCA600026160 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 781F6E161C44CCA600026160 /* NSString+Category.m */; };
 		781F6E1A1C44DA5300026160 /* metting_nonotification@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781F6E181C44DA5300026160 /* metting_nonotification@2x.png */; };
 		781F6E1B1C44DA5300026160 /* metting_nonotification@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781F6E191C44DA5300026160 /* metting_nonotification@3x.png */; };
-		7825DBF91C771CC700D5E6BA /* jpush-ios-2.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7825DBF71C771CC700D5E6BA /* jpush-ios-2.1.0.a */; };
 		782807A41C463AED0061D6CD /* Icon-1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782807A31C463AED0061D6CD /* Icon-1@2x.png */; };
 		78307DEC1CBF81AD00E91BB7 /* btn_reminder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78307DEA1CBF81AD00E91BB7 /* btn_reminder@2x.png */; };
 		78307DED1CBF81AD00E91BB7 /* btn_reminder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78307DEB1CBF81AD00E91BB7 /* btn_reminder@3x.png */; };
-		78307DF71CBFC7D900E91BB7 /* libmsgclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78307DF61CBFC7D900E91BB7 /* libmsgclient.a */; };
 		783701361C43DDFB006C80DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 783701351C43DDFB006C80DE /* main.m */; };
 		7837013F1C43DDFB006C80DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7837013D1C43DDFB006C80DE /* Main.storyboard */; };
 		783701411C43DDFB006C80DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783701401C43DDFB006C80DE /* Assets.xcassets */; };
@@ -197,10 +194,16 @@
 		7837034B1C43E3FC006C80DE /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837034A1C43E3FC006C80DE /* libstdc++.6.0.9.tbd */; };
 		7837034D1C43E405006C80DE /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837034C1C43E405006C80DE /* libicucore.tbd */; };
 		783790501CAE4A0200B5920A /* MyCard_NoticeIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7837904F1CAE4A0200B5920A /* MyCard_NoticeIcon@2x.png */; };
+		784687DF1DE2DCBC00AE3C4F /* jpush-ios-2.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 784687DE1DE2DCBC00AE3C4F /* jpush-ios-2.2.0.a */; };
+		784687E11DE2DDF600AE3C4F /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 784687E01DE2DDF600AE3C4F /* libresolv.tbd */; };
 		785643E71C50D3EC00836850 /* AnimatedTransitioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 785643E41C50D3EC00836850 /* AnimatedTransitioning.m */; };
 		785643E81C50D3EC00836850 /* TransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 785643E61C50D3EC00836850 /* TransitionDelegate.m */; };
 		7861D0291C4F8E7200B2F30D /* VideoShowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861D0281C4F8E7200B2F30D /* VideoShowItem.m */; };
 		78691C451CC4CB48005F5452 /* ring.caf in Resources */ = {isa = PBXBuildFile; fileRef = 78691C441CC4CB48005F5452 /* ring.caf */; };
+		787908A31DD48C30002DA7F8 /* MsgClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787908A11DD48C25002DA7F8 /* MsgClient.framework */; };
+		787908A41DD48C30002DA7F8 /* MsgClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 787908A11DD48C25002DA7F8 /* MsgClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		788292621DD479E1000F9AE9 /* RTMeetEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 788292601DD47979000F9AE9 /* RTMeetEngine.framework */; };
+		788292631DD479E1000F9AE9 /* RTMeetEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 788292601DD47979000F9AE9 /* RTMeetEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		78C5ECC61C4E447600193322 /* weixin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C5ECC41C4E447600193322 /* weixin@2x.png */; };
 		78C5ECC71C4E447600193322 /* weixin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C5ECC51C4E447600193322 /* weixin@3x.png */; };
 		78C5ECCA1C4E45B300193322 /* copy_scuess@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78C5ECC81C4E45B300193322 /* copy_scuess@2x.png */; };
@@ -245,6 +248,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		788292641DD479E1000F9AE9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				788292631DD479E1000F9AE9 /* RTMeetEngine.framework in Embed Frameworks */,
+				787908A41DD48C30002DA7F8 /* MsgClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2E4CBCA8C81B4B1BFCC1872C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC9F3D7C32580F380F2F34B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -253,7 +271,6 @@
 		780455C11C51E736003ADDCC /* no_video_show@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_video_show@3x.png"; sourceTree = "<group>"; };
 		780455C41C51FB11003ADDCC /* sharebackgroud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sharebackgroud@2x.png"; sourceTree = "<group>"; };
 		780455C51C51FB11003ADDCC /* sharebackgroud@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sharebackgroud@3x.png"; sourceTree = "<group>"; };
-		7809A9DC1C805E9D00B7C0F6 /* libanrtcsdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libanrtcsdk.a; sourceTree = "<group>"; };
 		7810288C1C48DA2200CD9FA6 /* ASBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASBadgeView.h; sourceTree = "<group>"; };
 		7810288D1C48DA2200CD9FA6 /* ASBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASBadgeView.m; sourceTree = "<group>"; };
 		7810F7EE1C5A073C00B77955 /* nick_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nick_close@2x.png"; sourceTree = "<group>"; };
@@ -268,12 +285,10 @@
 		781F6E161C44CCA600026160 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		781F6E181C44DA5300026160 /* metting_nonotification@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metting_nonotification@2x.png"; sourceTree = "<group>"; };
 		781F6E191C44DA5300026160 /* metting_nonotification@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "metting_nonotification@3x.png"; sourceTree = "<group>"; };
-		7825DBF71C771CC700D5E6BA /* jpush-ios-2.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.1.0.a"; sourceTree = "<group>"; };
 		7825DBF81C771CC700D5E6BA /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		782807A31C463AED0061D6CD /* Icon-1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-1@2x.png"; sourceTree = "<group>"; };
 		78307DEA1CBF81AD00E91BB7 /* btn_reminder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_reminder@2x.png"; sourceTree = "<group>"; };
 		78307DEB1CBF81AD00E91BB7 /* btn_reminder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_reminder@3x.png"; sourceTree = "<group>"; };
-		78307DF61CBFC7D900E91BB7 /* libmsgclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmsgclient.a; sourceTree = "<group>"; };
 		783701311C43DDFB006C80DE /* Teameeting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Teameeting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		783701351C43DDFB006C80DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7837013E1C43DDFB006C80DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -391,9 +406,6 @@
 		783701E91C43DF64006C80DE /* NetRequestUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestUtils.m; sourceTree = "<group>"; };
 		783701EA1C43DF64006C80DE /* ServerVisit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerVisit.h; sourceTree = "<group>"; };
 		783701EB1C43DF64006C80DE /* ServerVisit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerVisit.m; sourceTree = "<group>"; };
-		783701EE1C43DF64006C80DE /* MsgClientProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgClientProtocol.h; sourceTree = "<group>"; };
-		783701EF1C43DF64006C80DE /* TMClientType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMClientType.h; sourceTree = "<group>"; };
-		783701F01C43DF64006C80DE /* TMMsgSender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMMsgSender.h; sourceTree = "<group>"; };
 		783701F21C43DF64006C80DE /* Message+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Message+CoreDataProperties.h"; sourceTree = "<group>"; };
 		783701F31C43DF64006C80DE /* Message+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Message+CoreDataProperties.m"; sourceTree = "<group>"; };
 		783701F41C43DF64006C80DE /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
@@ -523,6 +535,8 @@
 		7837034A1C43E3FC006C80DE /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		7837034C1C43E405006C80DE /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		7837904F1CAE4A0200B5920A /* MyCard_NoticeIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MyCard_NoticeIcon@2x.png"; sourceTree = "<group>"; };
+		784687DE1DE2DCBC00AE3C4F /* jpush-ios-2.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.2.0.a"; sourceTree = "<group>"; };
+		784687E01DE2DDF600AE3C4F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		785643E31C50D3EC00836850 /* AnimatedTransitioning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedTransitioning.h; sourceTree = "<group>"; };
 		785643E41C50D3EC00836850 /* AnimatedTransitioning.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedTransitioning.m; sourceTree = "<group>"; };
 		785643E51C50D3EC00836850 /* TransitionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransitionDelegate.h; sourceTree = "<group>"; };
@@ -531,8 +545,8 @@
 		7861D0271C4F8E7200B2F30D /* VideoShowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoShowItem.h; sourceTree = "<group>"; };
 		7861D0281C4F8E7200B2F30D /* VideoShowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoShowItem.m; sourceTree = "<group>"; };
 		78691C441CC4CB48005F5452 /* ring.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ring.caf; sourceTree = "<group>"; };
-		78839E691CC7B3BE00496F75 /* AnyRTC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyRTC.h; sourceTree = "<group>"; };
-		78839E6A1CC7B3BE00496F75 /* AnyRTCMeetKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnyRTCMeetKit.h; sourceTree = "<group>"; };
+		787908A11DD48C25002DA7F8 /* MsgClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MsgClient.framework; sourceTree = "<group>"; };
+		788292601DD47979000F9AE9 /* RTMeetEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RTMeetEngine.framework; sourceTree = "<group>"; };
 		78C5ECC41C4E447600193322 /* weixin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@2x.png"; sourceTree = "<group>"; };
 		78C5ECC51C4E447600193322 /* weixin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin@3x.png"; sourceTree = "<group>"; };
 		78C5ECC81C4E45B300193322 /* copy_scuess@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "copy_scuess@2x.png"; sourceTree = "<group>"; };
@@ -571,27 +585,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784687E11DE2DDF600AE3C4F /* libresolv.tbd in Frameworks */,
 				78F96E8A1CA920D20051B165 /* CoreSpotlight.framework in Frameworks */,
 				78F96E881CA920CB0051B165 /* MobileCoreServices.framework in Frameworks */,
 				7837034D1C43E405006C80DE /* libicucore.tbd in Frameworks */,
+				784687DF1DE2DCBC00AE3C4F /* jpush-ios-2.2.0.a in Frameworks */,
 				7837034B1C43E3FC006C80DE /* libstdc++.6.0.9.tbd in Frameworks */,
 				783703491C43E3F5006C80DE /* libstdc++.tbd in Frameworks */,
 				783703471C43E3ED006C80DE /* libz.tbd in Frameworks */,
 				783703451C43E3E7006C80DE /* GLKit.framework in Frameworks */,
+				787908A31DD48C30002DA7F8 /* MsgClient.framework in Frameworks */,
 				783703431C43E3DF006C80DE /* VideoToolbox.framework in Frameworks */,
 				783703411C43E3D6006C80DE /* CoreTelephony.framework in Frameworks */,
-				7809A9DD1C805E9D00B7C0F6 /* libanrtcsdk.a in Frameworks */,
 				7837033F1C43E3CE006C80DE /* SystemConfiguration.framework in Frameworks */,
 				7837033D1C43E3C4006C80DE /* libsqlite3.0.tbd in Frameworks */,
 				7837033B1C43E3BE006C80DE /* Accelerate.framework in Frameworks */,
 				783703391C43E3B8006C80DE /* CFNetwork.framework in Frameworks */,
-				7825DBF91C771CC700D5E6BA /* jpush-ios-2.1.0.a in Frameworks */,
 				783703371C43E3B2006C80DE /* CoreGraphics.framework in Frameworks */,
+				788292621DD479E1000F9AE9 /* RTMeetEngine.framework in Frameworks */,
 				783703351C43E3AD006C80DE /* Security.framework in Frameworks */,
 				783703331C43E3A6006C80DE /* CoreData.framework in Frameworks */,
 				783702F81C43DF64006C80DE /* libWeChatSDK.a in Frameworks */,
 				EC157AD0B3A13035EAD046BB /* libPods.a in Frameworks */,
-				78307DF71CBFC7D900E91BB7 /* libmsgclient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -934,8 +949,7 @@
 		783701EC1C43DF64006C80DE /* RtcMesg */ = {
 			isa = PBXGroup;
 			children = (
-				78307DF61CBFC7D900E91BB7 /* libmsgclient.a */,
-				783701ED1C43DF64006C80DE /* include */,
+				787908A11DD48C25002DA7F8 /* MsgClient.framework */,
 				783701F21C43DF64006C80DE /* Message+CoreDataProperties.h */,
 				783701F31C43DF64006C80DE /* Message+CoreDataProperties.m */,
 				783701F41C43DF64006C80DE /* Message.h */,
@@ -948,16 +962,6 @@
 				783701FB1C43DF64006C80DE /* TMMessageManage.m */,
 			);
 			path = RtcMesg;
-			sourceTree = "<group>";
-		};
-		783701ED1C43DF64006C80DE /* include */ = {
-			isa = PBXGroup;
-			children = (
-				783701EE1C43DF64006C80DE /* MsgClientProtocol.h */,
-				783701EF1C43DF64006C80DE /* TMClientType.h */,
-				783701F01C43DF64006C80DE /* TMMsgSender.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		783701FF1C43DF64006C80DE /* SvUDID */ = {
@@ -1317,7 +1321,7 @@
 		78A893811C59AFB100C4CD49 /* JPush */ = {
 			isa = PBXGroup;
 			children = (
-				7825DBF71C771CC700D5E6BA /* jpush-ios-2.1.0.a */,
+				784687DE1DE2DCBC00AE3C4F /* jpush-ios-2.2.0.a */,
 				7825DBF81C771CC700D5E6BA /* JPUSHService.h */,
 			);
 			path = JPush;
@@ -1344,6 +1348,7 @@
 		D0E48B81E79BBF549FEB4C10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				784687E01DE2DDF600AE3C4F /* libresolv.tbd */,
 				78F96E891CA920D20051B165 /* CoreSpotlight.framework */,
 				78F96E871CA920CB0051B165 /* MobileCoreServices.framework */,
 				7837034C1C43E405006C80DE /* libicucore.tbd */,
@@ -1377,9 +1382,7 @@
 		FCBC48561C44A6B300A9A63F /* AnyrtcSDK */ = {
 			isa = PBXGroup;
 			children = (
-				78839E691CC7B3BE00496F75 /* AnyRTC.h */,
-				78839E6A1CC7B3BE00496F75 /* AnyRTCMeetKit.h */,
-				7809A9DC1C805E9D00B7C0F6 /* libanrtcsdk.a */,
+				788292601DD47979000F9AE9 /* RTMeetEngine.framework */,
 			);
 			path = AnyrtcSDK;
 			sourceTree = "<group>";
@@ -1397,6 +1400,7 @@
 				7837012F1C43DDFB006C80DE /* Resources */,
 				075FB986D30C0FEA7401CAEC /* Embed Pods Frameworks */,
 				BD926870E45C7391B7709DC1 /* Copy Pods Resources */,
+				788292641DD479E1000F9AE9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1449,14 +1453,18 @@
 		783701291C43DDFB006C80DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = zjq;
 				TargetAttributes = {
 					783701301C43DDFB006C80DE = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 5543CP4MRT;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 							com.apple.SafariKeychain = {
@@ -1834,8 +1842,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1879,8 +1889,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -1912,16 +1924,21 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Teameeting/Teameeting.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: yangyang wang (3VG6DLPKJ2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: yangyang wang (3VG6DLPKJ2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 坚强 zhang (L7M3843Y8P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 坚强 zhang (L7M3843Y8P)";
+				DEVELOPMENT_TEAM = 5543CP4MRT;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Teameeting/ViewCons/VideoCallViewCon/AnyrtcSDK",
+					"$(PROJECT_DIR)/Teameeting/Tool/RtcMesg",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Teameeting-Prefix.pch";
 				INFOPLIST_FILE = Teameeting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Teameeting/Three/JPush",
 					"$(PROJECT_DIR)/Teameeting/Tool/RtcMesg",
 					"$(PROJECT_DIR)/Teameeting/Tool/WeChat",
 					"$(PROJECT_DIR)/Teameeting/ViewCons/VideoCallViewCon/AnyrtcSDK",
@@ -1954,10 +1971,12 @@
 					"-framework",
 					"\"lame\"",
 					"-w",
+					"-licucore",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.teameeting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "99ba1e5c-3852-4a05-ab55-22393bf6a326";
+				PROVISIONING_PROFILE = "958e9dbc-8306-4484-87f7-79232a950645";
+				PROVISIONING_PROFILE_SPECIFIER = TeameetingDevelopment;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1971,14 +1990,19 @@
 				CODE_SIGN_ENTITLEMENTS = Teameeting/Teameeting.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Boyuan Electronic Technology Co. Ltd (5543CP4MRT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Boyuan Electronic Technology Co. Ltd (5543CP4MRT)";
+				DEVELOPMENT_TEAM = 5543CP4MRT;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Teameeting/ViewCons/VideoCallViewCon/AnyrtcSDK",
+					"$(PROJECT_DIR)/Teameeting/Tool/RtcMesg",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Teameeting-Prefix.pch";
 				INFOPLIST_FILE = Teameeting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Teameeting/Three/JPush",
 					"$(PROJECT_DIR)/Teameeting/Tool/RtcMesg",
 					"$(PROJECT_DIR)/Teameeting/Tool/WeChat",
 					"$(PROJECT_DIR)/Teameeting/ViewCons/VideoCallViewCon/AnyrtcSDK",
@@ -2011,10 +2035,12 @@
 					"-framework",
 					"\"lame\"",
 					"-w",
+					"-licucore",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dync.teameeting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0ba92f4b-8e5a-4624-8485-82ff4b1099d1";
+				PROVISIONING_PROFILE = "b328fed7-1eb4-47c1-b5de-385e9057eacf";
+				PROVISIONING_PROFILE_SPECIFIER = TeameetingDistribution;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -911,6 +911,7 @@
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
 {
+//    return UIInterfaceOrientationMaskPortrait;
     return UIInterfaceOrientationMaskAll;
 }
 

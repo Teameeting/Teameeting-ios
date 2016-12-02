@@ -77,7 +77,7 @@
     self.micImageView.hidden = YES;
     
     self.activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [self.activityIndicatorView startAnimating];
+//    [self.activityIndicatorView startAnimating];
     [self.videoView addSubview:self.activityIndicatorView];
     
     

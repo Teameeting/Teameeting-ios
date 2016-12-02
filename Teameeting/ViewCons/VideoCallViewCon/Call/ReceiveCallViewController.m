@@ -7,8 +7,8 @@
 //
 
 #import "ReceiveCallViewController.h"
-#import "AnyRTCMeetKit.h"
-
+#import <RTMeetEngine/RTMeetKit.h>
+#import <RTMeetEngine/RTCCommon.h>
 #import <AVFoundation/AVFoundation.h>
 #import "ASHUD.h"
 #import "TMMessageManage.h"
@@ -17,7 +17,7 @@
 
 #define bottonSpace 10
 #define VideoWidth 100
-@interface ReceiveCallViewController ()<AnyRTCMeetDelegate,UIGestureRecognizerDelegate,tmMessageReceive,UIAlertViewDelegate>
+@interface ReceiveCallViewController ()<RTMeetKitDelegate,UIGestureRecognizerDelegate,tmMessageReceive,UIAlertViewDelegate>
 {
     VideoShowItem *_localVideoItem;
     
@@ -40,7 +40,7 @@
 @property (nonatomic, strong) NSMutableArray *_userArray;
 @property (nonatomic, strong) NSMutableArray *_channelArray;
 
-@property(nonatomic, strong) AnyRTCMeetKit *_client;
+@property(nonatomic, strong) RTMeetKit *_client;
 @property(nonatomic, strong) UIScrollView *videosScrollView;
 @property(nonatomic, assign) BOOL isFullScreen;
 
@@ -117,8 +117,14 @@
     UIView *local = [[UIView alloc] initWithFrame:self.view.frame];
     _localVideoItem.videoView = local;
     
-    _client = [[AnyRTCMeetKit alloc] initWithDelegate:self withLocalViewItem:_localVideoItem];
-   
+    _client = [[RTMeetKit alloc] initWithDelegate:self];
+    
+#warning 去AnyRTC官网替换响应的开发者信息
+    [_client InitEngineWithAnyrtcInfo:@"teameetingtest" andAppID:@"meetingtest" andAppKey:@"OPJXF3xnMqW+7MMTA4tRsZd6L41gnvrPcI25h9JCA4M" andAppToken:@"c4cd1ab6c34ada58e622e75e41b46d6d"];
+ 
+    // [_client ConfigServerForPriCloud:@"192.168.7，207" andPort:9060];
+    
+    [_client SetVideoCapturer:local andUseFront:YES];
     
     UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(locolvideoSingleTap:)];
     singleTapGestureRecognizer.delegate = self;
@@ -211,7 +217,7 @@
         videoOldEnable = NO;
     }
     if (_client) {
-         [_client SetLocalVideoEnable:enable];
+         [_client SetVideoEnable:enable];
        
         if (enable) {
             [_localVideoItem setVideoHidden:NO];
@@ -223,7 +229,7 @@
 - (void)audioEnable:(BOOL)enable
 {
     if (_client) {
-        [_client SetLocalAudioEnable:enable];
+        [_client SetAudioEnable:enable];
         if (enable) {
             [_localVideoItem setAudioClose:NO];
         }else{
@@ -280,7 +286,7 @@
 - (void)applicationWillResignActive
 {
     if (!videoOldEnable) {
-        [_client SetLocalVideoEnable:NO];
+        [_client SetVideoEnable:NO];
     }
 }
 
@@ -288,13 +294,16 @@
 - (void)applicationDidBecomeActive
 {
     if (!videoOldEnable) {
-        [_client SetLocalVideoEnable:YES];
+        [_client SetVideoEnable:YES];
     }
     [self layoutSubView];
 }
 
 - (void)layoutSubView
 {
+    
+  //  [_client ChangeCameraDirection:[[UIDevice currentDevice] orientation]];
+            
     if ([ToolUtils shead].isBack) {
         return;
     }
@@ -583,41 +592,117 @@
 }
 
 #pragma mark - AnyrtcM2MDelegate
-
-
-/** 进会成功
- * @param strAnyrtcId	AnyRTC的ID
- */
-- (void) OnRtcJoinMeetOK:(NSString*) strAnyrtcId
-{
-    NSLog(@"OnRtcJoinMeetOK:%@",strAnyrtcId);
+- (void)OnRTCJoinMeetOK:(NSString*)strAnyrtcId {
+     NSLog(@"OnRTCJoinMeetOK:%@",strAnyrtcId);
 }
 
-/** 进会失败
- * @param strAnyrtcId	AnyRTC的ID
- * @param code	错误代码
- * @param strReason		原因
- */
-- (void) OnRtcJoinMeetFailed:(NSString*) strAnyrtcId withCode:(AnyRTCErrorCode) code withReason:(NSString*) strReason
-{
-    NSLog(@"OnRtcJoinMeetFailed:%@ withCode:%ld withReason:%@",strAnyrtcId,(long)code,strReason);
+- (void)OnRTCJoinMeetFailed:(NSString*)strAnyrtcId withCode:(int)code withReaso:(NSString*)strReason {
+     NSLog(@"OnRTCJoinMeetFailed:%@ withCode:%ld withReason:%@",strAnyrtcId,(long)code,strReason);
+    
+    [ASHUD showHUDWithCompleteStyleInView:self.view content:[self getErrorInfoForRtc:code] icon:nil];
+    [_client Leave];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.DisMissPar) {
+            self.DisMissPar();
+        }
+    });
 }
 
-/** 离开会议
- *
- */
-- (void) OnRtcLeaveMeet:(int) code
-{
+- (void)OnRTCLeaveMeet:(int) code {
      NSLog(@"OnRtcLeaveMeet:%d",code);
     if (code == AnyRTC_FORCE_EXIT)
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请去AnyRTC官网申请账号,如有疑问请联系客服!" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alertView show];
+    }else{
+        [ASHUD showHUDWithCompleteStyleInView:self.view content:[self getErrorInfoForRtc:code] icon:nil];
         
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        });
     }
 }
 
-- (void) OnRtcVideoView:(UIView*)videoView didChangeVideoSize:(CGSize)size {
+- (void)OnRTCOpenVideoRender:(NSString*)strLivePeerID {
+    VideoShowItem* findView = [_dicRemoteVideoView objectForKey:strLivePeerID];
+    if ([findView.channelID isEqualToString:strLivePeerID]) {
+        return;
+    }
+    if (!_peerSelectedId&&_dicRemoteVideoView.count==0) {
+        _peerSelectedId = strLivePeerID;
+    }
+    UIView *videoView = [UIView new];
+    VideoShowItem *item = [[VideoShowItem alloc] init];
+    item.videoView = videoView;
+    item.channelID = strLivePeerID;
+    
+    if (_client) {
+        [_client SetRTCVideoRender:strLivePeerID andRender:videoView];
+    }
+    
+    [_dicRemoteVideoView setObject:item forKey:strLivePeerID];
+    
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
+    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
+    singleTapGestureRecognizer.delegate = self;
+    [item.videoView  addGestureRecognizer:singleTapGestureRecognizer];
+    
+    
+    [self layoutSubView];
+    //While the number of remote image change, send a notification
+    NSNumber *remoteVideoCount = [NSNumber numberWithInteger:[_dicRemoteVideoView count]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"REMOTEVIDEOCHANGE" object:remoteVideoCount];
+}
+- (void)OnRTCCloseVideoRender:(NSString*)strLivePeerID {
+    VideoShowItem *findView = [_dicRemoteVideoView objectForKey:strLivePeerID];
+    if (findView) {
+        if ([strLivePeerID isEqualToString:_peerSelectedId]) {
+            [findView.videoView removeFromSuperview];
+            [_dicRemoteVideoView removeObjectForKey:strLivePeerID];
+            if (_dicRemoteVideoView.count!=0) {
+                _peerSelectedId =[[_dicRemoteVideoView allKeys] firstObject];
+            }else{
+                _peerSelectedId = nil;
+            }
+        }else{
+            [findView.videoView removeFromSuperview];
+            [_dicRemoteVideoView removeObjectForKey:strLivePeerID];
+            
+        }
+        if (_dicRemoteVideoView.count ==0) {
+            self.isFullScreen = NO;
+        }
+        [self layoutSubView];
+    }
+    
+    //While the number of remote image change, send a notification
+    NSNumber *remoteVideoCount = [NSNumber numberWithInteger:[_dicRemoteVideoView count]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"REMOTEVIDEOCHANGE" object:remoteVideoCount];
+}
+- (void)OnRTCAVStatus:(NSString*)strLivePeerID withAudio:(BOOL)audio withVideo:(BOOL)video {
+    VideoShowItem *item = [_dicRemoteVideoView objectForKey:strLivePeerID];
+    if (item) {
+        if (audio) {
+            [item setAudioClose:NO];
+        }else{
+            [item setAudioClose:YES];
+        }
+        if (video) {
+            [item setVideoHidden:NO];
+        }else{
+            [item setVideoHidden:YES];
+        }
+    }else{
+        if (!audio) {
+            [_audioOperateDict setObject:[NSNumber numberWithBool:audio] forKey:strLivePeerID];
+        }
+        
+        if (!video) {
+            [_videoOperateDict setObject:[NSNumber numberWithBool:video] forKey:strLivePeerID];
+        }
+    }
+}
+-(void) OnRtcViewChanged:(UIView*)videoView didChangeVideoSize:(CGSize)size {
     NSLog(@"-------%d",[NSThread isMainThread]);
     if (videoView == _localVideoItem.videoView) {
         _localVideoItem.videoSize = size;
@@ -638,106 +723,49 @@
     [self layoutSubView];
     
 }
-/*! @brief 远程图像进入p2p会议
- *
- *  @param removeView 远程图像
- *  @param peerChannelID  该通道标识符
- */
-- (void) OnRtcOpenRemoteView:(NSString*)channelID  withRemoteView:(UIView *)removeView
-{
-   
-    VideoShowItem* findView = [_dicRemoteVideoView objectForKey:channelID];
-    if (findView.videoView == removeView) {
-        return;
+// 获取错误信息
+- (NSString*)getErrorInfoForRtc:(int)code {
+    switch (code) {
+        case AnyRTC_OK:
+            return @"RTC:链接成功";
+            break;
+        case AnyRTC_UNKNOW:
+            return @"RTC:未知错误";
+            break;
+        case AnyRTC_EXCEPTION:
+            return @"RTC:SDK调用异常";
+            break;
+        case AnyRTC_NET_ERR:
+            return @"RTC:网络错误";
+            break;
+        case AnyRTC_LIVE_ERR:
+            return @"RTC:直播出错";
+            break;
+        case AnyRTC_BAD_REQ:
+            return @"RTC:服务不支持的错误请求";
+            break;
+        case AnyRTC_AUTH_FAIL:
+            return @"RTC:认证失败";
+            break;
+        case AnyRTC_NO_USER:
+            return @"RTC:此开发者信息不存在";
+            break;
+        case AnyRTC_SQL_ERR:
+            return @"RTC: 服务器内部数据库错误";
+            break;
+        case AnyRTC_ARREARS:
+            return @"RTC:账号欠费";
+            break;
+        case AnyRTC_LOCKED:
+            return @"RTC:账号被锁定";
+            break;
+        case AnyRTC_FORCE_EXIT:
+            return @"RTC:强制离开";
+            break;
+        default:
+            break;
     }
-    if (!_peerSelectedId&&_dicRemoteVideoView.count==0) {
-        _peerSelectedId = channelID;
-    }
-    
-    VideoShowItem *item = [[VideoShowItem alloc] init];
-    item.videoView = removeView;
-    item.channelID = channelID;
-    
-    [_dicRemoteVideoView setObject:item forKey:channelID];
-    
-    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
-    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
-    singleTapGestureRecognizer.delegate = self;
-    [item.videoView  addGestureRecognizer:singleTapGestureRecognizer];
-
-    
-    [self layoutSubView];
-    //While the number of remote image change, send a notification
-    NSNumber *remoteVideoCount = [NSNumber numberWithInteger:[_dicRemoteVideoView count]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"REMOTEVIDEOCHANGE" object:remoteVideoCount];
-
-   
-    
-}
-
-/*! @brief 远程图像离开会议
- *
- *  @param publishID  该通道标识符
- */
-- (void)OnRtcRemoveRemoteView:(NSString*)channelID
-{
-    
-    VideoShowItem *findView = [_dicRemoteVideoView objectForKey:channelID];
-    if (findView) {
-        if ([channelID isEqualToString:_peerSelectedId]) {
-            [findView.videoView removeFromSuperview];
-            [_dicRemoteVideoView removeObjectForKey:channelID];
-            if (_dicRemoteVideoView.count!=0) {
-                _peerSelectedId =[[_dicRemoteVideoView allKeys] firstObject];
-            }else{
-                _peerSelectedId = nil;
-            }
-        }else{
-            [findView.videoView removeFromSuperview];
-            [_dicRemoteVideoView removeObjectForKey:channelID];
-           
-        }
-        if (_dicRemoteVideoView.count ==0) {
-            self.isFullScreen = NO;
-        }
-        [self layoutSubView];
-    }
-   
-    //While the number of remote image change, send a notification
-    NSNumber *remoteVideoCount = [NSNumber numberWithInteger:[_dicRemoteVideoView count]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"REMOTEVIDEOCHANGE" object:remoteVideoCount];
-    
-}
-/*! @brief 远程视频的音视频状态
- *
- *  @param publishID 通道的ID
- *  @param audioEnable  音频是否开启
- *  @param videoEnable  视频是否开启
- */
-- (void)OnRtcRemoteAVStatus:(NSString*)publishID withAudioEnable:(BOOL)audioEnable withVideoEnable:(BOOL)videoEnable
-{
-    
-    VideoShowItem *item = [_dicRemoteVideoView objectForKey:publishID];
-    if (item) {
-        if (audioEnable) {
-            [item setAudioClose:NO];
-        }else{
-            [item setAudioClose:YES];
-        }
-        if (videoEnable) {
-            [item setVideoHidden:NO];
-        }else{
-            [item setVideoHidden:YES];
-        }
-    }else{
-        if (!audioEnable) {
-            [_audioOperateDict setObject:[NSNumber numberWithBool:audioEnable] forKey:publishID];
-        }
-        
-        if (!videoEnable) {
-            [_videoOperateDict setObject:[NSNumber numberWithBool:videoEnable] forKey:publishID];
-        }
-    }
+    return @"未知错误";
 }
 
 
